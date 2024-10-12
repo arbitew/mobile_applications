@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cat_icon"
+    android:orientation="horizontal"
+    tools:context=".MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:padding="5dp"
+                        android:text="@string/your_cat" />
+
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="300dp"
+                        android:contentDescription="@string/my_image_description"
+                        android:gravity="center"
+                        android:src="@drawable/cat_icon" />
+
+                </LinearLayout>
+                <FrameLayout
+                    android:layout_width="300dp"
+                    android:layout_height="300dp">
+
+                    <ImageView
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:contentDescription="yourCat"
+                        android:src="@drawable/cat"/>
+
+                    <TextView
+                        android:id="@+id/new_cat_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:background="@color/white"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:text="@string/hello_world" />
+                </FrameLayout>
+            </LinearLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="200dp"
+                android:layout_height="300dp"
+                android:orientation="vertical"
+                android:animateLayoutChanges="true"
+                android:layout_marginStart="20dp"
+                >
+
+                <TextView
+                    android:id="@+id/textForEdit"
+                    style="@style/textView_style"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:text="@string/cat_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/plain_text_input"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Input something beautiful"
+                    android:inputType="text"
+                    android:gravity="center_horizontal|center_vertical"
+                    tools:ignore="MissingConstraints" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    app:barrierDirection="start"
+                    app:constraint_referenced_ids="tButton, askingText"/>
+                <Button
+                    android:id="@+id/tButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="ChangeText"
+                    android:text="rename"
+                    android:gravity="center_horizontal|center_vertical"
+                    tools:ignore="MissingConstraints"/>
+
+                <TextView
+                    android:id="@+id/askingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="5dp"
+                    android:text="Feed me, please:"
+                    tools:ignore="MissingConstraints"/>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/feedLayout"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    tools:ignore="MissingConstraints">
+                    <Button
+                        android:id="@+id/feedButton"
+                        android:layout_marginStart="20dp"
+                        style="@style/button_style"
+                        android:layout_width="wrap_content"
+                        app:layout_constraintHorizontal_chainStyle="spread"
+                        android:layout_height="wrap_content"
+                        android:onClick="feedFun"
+                        app:layout_constraintEnd_toStartOf="@id/feedNum"
+                        android:text="Feed"/>
+
+                    <TextView
+                        android:id="@+id/feedNum"
+                        android:padding="5dp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/feedButton"
+                        app:layout_constraintStart_toEndOf="@id/feedButton"
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="it's fed 0 times" />
+                    <androidx.constraintlayout.widget.Barrier
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="feedButton, feedNum"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.helper.widget.Flow
+                    android:id="@+id/flow1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    app:constraint_referenced_ids="textForEdit, plain_text_input,tButton, askingText, feedLayout"
+                    app:flow_horizontalGap="10dp"
+                    app:flow_horizontalStyle="spread"
+                    app:flow_wrapMode="chain"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/wrapMoreText"
+                android:layout_width="500dp"
+                android:layout_height="500dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

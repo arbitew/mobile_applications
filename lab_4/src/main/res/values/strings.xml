@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab_3_1</string>
+
+    <string name="hello_world">Hello_world</string>
+    <string name="your_cat">Your cat</string>
+    <string name="cat_name">Cat name:</string>
+    <string name="my_image_description">cat</string>
+</resources>
