@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp">
+
+                <RadioGroup
+                    android:id="@+id/radTest1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radApple"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="apple" />
+
+                    <RadioButton
+                        android:id="@+id/radNotApple"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Not apple" />
+
+                    <TextView
+                        android:id="@+id/test1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:onClick="test1Change"
+                        android:text="false" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginBottom="30dp">
+
+                <CheckBox
+                    android:id="@+id/chApple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="apple" />
+
+                <CheckBox
+                    android:id="@+id/chNotApple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Not apple" />
+
+                <TextView
+                    android:id="@+id/test2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:onClick="test2Change"
+                    android:text="false" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/bestFruit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="Input something" />
+
+            <TextView
+                android:id="@+id/testText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="testTextChanged"
+                android:text="false" />
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp">
+
+                <RadioButton
+                    android:id="@+id/ImApple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/images" />
+
+                <RadioButton
+                    android:id="@+id/ImNotApple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/not_apple" />
+
+                <TextView
+                    android:id="@+id/test3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="test3Change"
+                    android:text="false" />
+            </RadioGroup>
+            <Button
+                android:id="@+id/checkResults"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="toCheck"
+                android:text="Check results"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
